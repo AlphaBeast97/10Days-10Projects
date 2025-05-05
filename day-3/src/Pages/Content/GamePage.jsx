@@ -15,6 +15,7 @@ const GamePage = () => {
   const [Score, setScore] = useState(0);
   const [userNum, setUserNum] = useState(0);
   const [compNum, setCompNum] = useState(1);
+  const [isBlur, setIsBlur] = useState(false);
   const [isUseNumSelected, setIsUseNumSelected] = useState(true);
   const [isShowRulePressed, setIsShowRulePressed] = useState(false);
 
@@ -42,9 +43,14 @@ const GamePage = () => {
     if (userNum === 0) {
       setIsUseNumSelected(false);
     } else {
+      setIsBlur(true)
       const randNum = Math.floor(Math.random() * 6) + 1;
       setCompNum(randNum);
     }
+
+    setTimeout(() => {
+      setIsBlur(false);
+    }, 300);
   };
   
   const HandelNumber = (count) => {
@@ -105,9 +111,9 @@ const GamePage = () => {
       
       <motion.main  style={{ y: mainY }} className="flex font-medium justify-center mt-40 h-100">
         <div className="flex flex-col items-center justify-around">
-          <img onClick={() => {getRandomNumber()}} className="lg:size-100 transition-all hover:scale-110 cursor-pointer active:scale-100" src= {`./Images/dice_${compNum}.png`} alt="dice" />
+          <img onClick={() => {getRandomNumber()}} className={`lg:size-100 transition-all hover:scale-110 cursor-pointer active:scale-100 ${isBlur ? 'blur-sm' : ''}`} src= {`./Images/dice_${compNum}.png`} alt="dice" />
           <p className="mt-5">Click on Dice to roll</p>
-          <button onClick={() => {setScore(0);setIsUseNumSelected(true);setUserNum(0)}} name="reset" className="transition-all hover:scale-105 hover:shadow-2xl shadow-blue-gray-700 border p-2 pl-10 pr-10 cursor-pointer mt-10 rounded-md active:scale-100">Resent Score</button>
+          <button onClick={() => {setScore(0); setIsUseNumSelected(true); setUserNum(0)}} name="reset" className="transition-all hover:scale-105 hover:shadow-2xl shadow-blue-gray-700 border p-2 pl-10 pr-10 cursor-pointer mt-10 rounded-md active:scale-100">Resent Score</button>
           <button onClick={() => showRule()} name="rules" className="transition-all hover:scale-105 hover:shadow-2xl shadow-blue-gray-700 cursor-pointer bg-gray-900 text-white border p-2 pl-12 pr-12 mt-5 rounded-md active:scale-100">Show Rules</button>
         </div>
       </motion.main>
