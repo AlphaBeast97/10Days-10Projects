@@ -109,7 +109,7 @@ const GamePage = () => {
         </div>
       </header>
       
-      <motion.main  style={{ y: mainY }} className="flex font-medium justify-center mt-40 h-100">
+      <motion.main  style={{ y: mainY }} className="flex font-medium justify-center lg:mt-20 h-100">
         <div className="flex flex-col items-center justify-around">
           <img onClick={() => {getRandomNumber()}} className={`lg:size-100 transition-all hover:scale-110 cursor-pointer active:scale-100 ${isBlur ? 'blur-sm' : ''}`} src= {`./Images/dice_${compNum}.png`} alt="dice" />
           <p className="mt-5">Click on Dice to roll</p>
