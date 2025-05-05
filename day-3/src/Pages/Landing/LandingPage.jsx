@@ -62,7 +62,7 @@ const LandingPage = ({ setStart }) => {
           exit="exit"
         />
         <motion.div className="flex flex-col items-center" variants={textVariants} initial="initial" animate="animate" exit="exit">
-          <motion.p className='font-extrabold lg:text-8xl text-7xl' variants={textVariants}>DICE GAME</motion.p>
+          <motion.p className='font-extrabold lg:text-8xl text-5xl' variants={textVariants}>DICE GAME</motion.p>
           <motion.button
             onClick={handleButtonClick}
             className='cursor-pointer rounded border-2 text-white bg-gray-900 p-5 transition-all hover:bg-white hover:border-black hover:text-gray-900 hover:shadow-2xl mt-6'

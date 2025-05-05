@@ -3,7 +3,7 @@ import { AnimatePresence, motion, useMotionValue } from 'motion/react';
 
 const button = (count) => {
   return (
-    <button className="border size-10 lg:size-15 cursor-pointer">
+    <button className="border size-8 lg:size-15 cursor-pointer">
       {count}
     </button>
   );
@@ -78,7 +78,7 @@ const GamePage = () => {
     >
       <header className="flex justify-between m-10 ">
         <div className="font-semibold flex flex-col items-center">
-          <p className="text-8xl ">{Score}</p>
+          <p className="lg:text-8xl text-5xl">{Score}</p>
           <p>Total Score</p>
         </div>
         <div className="font-semibold flex flex-col justify-around items-end">
