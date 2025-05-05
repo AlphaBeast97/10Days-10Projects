@@ -1,15 +1,13 @@
-import React from 'react'
-import LandingPage from './Components/Landing/LandingPage'
-import GamePage from './Components/Content/GamePage'
+import React, { useState } from 'react'
+import LandingPage from './Pages/Landing/LandingPage'
+import GamePage from './Pages/Content/GamePage'
 
 const App = () => {
 
-  
-
+  const [startGame, setStartGame] = useState(false)
   return (
     <div>
-      <LandingPage />
-      <GamePage />
+      {!startGame ? (<LandingPage setStart ={setStartGame} />) : (<GamePage />)}      
     </div>
   )
 }
