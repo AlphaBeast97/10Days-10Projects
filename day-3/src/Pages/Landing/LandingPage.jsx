@@ -74,6 +74,17 @@ const LandingPage = ({ setStart }) => {
             Play Now
           </motion.button>
         </motion.div>
+        <motion.footer 
+        variants={textVariants}
+        className='border-t items-center justify-center text-xs p-2 pb-2 w-full bottom-0 absolute flex flex-col'
+        >
+          <p>
+            Dice it is a project by <a className='text-cyan-700 transition-all hover:underline' href="https://github.com/AlphaBeast97">  Muhammad Saad Khan. </a> Made using:
+          </p>
+          <p className=' mt-1 flex'>
+            <a href="https://react.dev/"><img className='size-5' src="./react.svg" alt="React Logo" /></a> <a href="https://tailwindcss.com/"><img className='size-5 ml-4' src="./icons8-tailwind-css.svg" alt="" /></a> <a href="https://www.netlify.com/"><img className='size-5 ml-4' src="./icons8-netlify-24.png" alt="" /></a>
+          </p> 
+        </motion.footer>
       </motion.main>
     )}
   </AnimatePresence>
